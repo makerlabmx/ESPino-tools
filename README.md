@@ -50,7 +50,7 @@ Conecta el ESPino por USB y ponlo en modo Bootloader:
 Instala la dependencia serialport para esptool, ejecuta lo siguiente en la terminal:
 
 ```
-sudo easy_install -U pyseriala
+sudo easy_install -U pyserial
 ```
 
 Ejecuta lo siguiente en la terminal para subir el firmware:
