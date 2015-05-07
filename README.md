@@ -25,7 +25,7 @@ Los ESPino vienen con el firmware node-mcu precargado (Lua).
 
 ## Documentacíon
 
-Puedes encontrar el Datasheet, esquemático y demás documentación del ESPino en la carpeta "Documentación" incluida con este archivo.
+Puedes encontrar el Datasheet, esquemático y demás documentación del ESPino en la carpeta "Docs" incluida con este archivo.
 
 ## Cargando el firmware node-mcu
 
