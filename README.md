@@ -14,6 +14,10 @@ Los ESPino vienen con el firmware node-mcu precargado (Lua).
 	1. Ve a la carpeta ``Drivers`` y descomprime ``CP210x_VCP_Windows.zip``
 	2. Ejecuta el instalador correspondiente a tu sistema (x86 o x64).
 
+- Linux:
+	
+	Debe captarlo automáticamente y montarlo en ``/dev/ttyUSB0`` o similar.
+
 ## Utilizando el IDE ESPlorer
 
 - Ejecútalo con doble click a ESPlorer.jar, o en Windows, ESPlorer.bat
@@ -43,7 +47,13 @@ Conecta el ESPino por USB y ponlo en modo Bootloader:
 2. Suelta el botón RESET, manteniendo USER/PROG presionado
 3. Espera un segundo y suelta USER/PROG
 
-Ejecuta lo siguiente en la terminal:
+Instala la dependencia serialport para esptool, ejecuta lo siguiente en la terminal:
+
+```
+sudo easy_install -U pyseriala
+```
+
+Ejecuta lo siguiente en la terminal para subir el firmware:
 
 ```
 esptool/esptool.py -p /dev/tty.SLAB_USBtoUART write_flash 0x000000 nodemcu-firmware/pre_build/latest/nodemcu_latest.bin
