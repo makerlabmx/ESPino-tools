@@ -1,62 +1,62 @@
 # ESPino
 
-Los ESPino vienen con el firmware node-mcu precargado (Lua).
+ESPino comes with the node-mcu firmware preloaded (Lua).
 
-## Instalando el Driver USB
+## Installing the USB driver
 
 - Mac OSX: 
 
-	1. Ve a la carpeta ``Drivers`` y haz doble click sobre ``SiLabsUSBDriverDisk.dmg``
-	2. Ejecuta ``Silicon Labs VCP Driver.pkg`` y sigue las instrucciones
+	1. Go to the ``Drivers`` folder and open ``SiLabsUSBDriverDisk.dmg``
+	2. Execute ``Silicon Labs VCP Driver.pkg`` and follow the instructions
 
 - Windows:
 
-	1. Ve a la carpeta ``Drivers`` y descomprime ``CP210x_VCP_Windows.zip``
-	2. Ejecuta el instalador correspondiente a tu sistema (x86 o x64).
+	1. Go to the ``Drivers`` folder and unzip ``CP210x_VCP_Windows.zip``
+	2. Execute the firmware corresponding to your system (x86 or x64).
 
 - Linux:
 	
-	Debe captarlo automáticamente y montarlo en ``/dev/ttyUSB0`` o similar.
+	It should be automatically detected and mounted on ``/dev/ttyUSB0`` or similar.
 
-## Utilizando el IDE ESPlorer
+## Using the ESPlorer IDE
 
-- Ejecútalo con doble click a ESPlorer.jar, o en Windows, ESPlorer.bat
-- Selecciona el puerto serial correspondiente, 9600 bauds y da click en open
-- Puede que te de un error de que no se recibió la respuesta esperada, esto es normal
-- Puedes abrir uno de los ejemplos en la carpeta ``examples``, lo ejecutas con "Send to ESP" (no se guarda permanentemente en el ESP, por lo que si lo reinicias se pierde)
-- Puedes guardarlo en el ESP con "Save to ESP", para que se ejecute automáticamente cuando inicia el ESP, hay que guardarlo con el nombre ``init.lua``
-- Puedes ver la documentación de node-mcu aquí: https://github.com/nodemcu/nodemcu-firmware/wiki/nodemcu_api_en
+- Launch it making double click on ESPlorer.jar, or on Windows, ESPlorer.bat
+- Select the correct serial port, 9600 bauds and click open
+- An error saying that the expected response was not received could appear, this is normal
+- You can open one of the examles in the ``examples`` folder, and execute it with "Send to ESP" (it is not permanently saved to the ESP, it will be lost if it's restarted)
+- You can save it in the ESP with "Save to ESP". If you want it to be executed as the ESP starts, you should save it with the name ``init.lua``
+- You can see node-mcu's documentation here: https://github.com/nodemcu/nodemcu-firmware/wiki/nodemcu_api_en
 
-## Documentacíon
+## Documentation
 
-Puedes encontrar el Datasheet, esquemático y demás documentación del ESPino en la carpeta "Docs" incluida con este archivo.
+You can find the Datasheet, schematic and other info of ESPino in the "Docs" folder included with this file.
 
-## Cargando el firmware node-mcu
+## (Re)Uploading node-mcu firmware
 
-En caso de que hayas sobreescrito el firmware y quieras reinstalar node-mcu, haz lo siguiente:
+If the firmware has ben overwritten and you want to go back to the node-mcu firmware, do the following:
 
-Abre una terminal y ve a la carpeta donde está este archivo:
+Open a terminal and go to the folder where this file lies:
 
 ```
-cd [dirección de esta carpeta]
+cd [path to this folder]
 ```
 
-Conecta el ESPino por USB y ponlo en modo Bootloader:
+Connect the ESPino via USB and put it in Bootloader mode:
 
-1. Presiona los botones RESET y USER/PROG al mismo tiempo sin soltarlos
-2. Suelta el botón RESET, manteniendo USER/PROG presionado
-3. Espera un segundo y suelta USER/PROG
+1. Press the RESET and USER/PROG buttons at the same time without releasing them
+2. Release the RESET button, keeping USER/PROG pressed
+3. Wait a second and release USER/PROG
 
-Instala la dependencia serialport para esptool, ejecuta lo siguiente en la terminal:
+Install the serialport deoendency for esptool, execute:
 
 ```
 sudo easy_install -U pyserial
 ```
 
-Ejecuta lo siguiente en la terminal para subir el firmware:
+Execute the following for uploading the firmware:
 
 ```
 esptool/esptool.py -p /dev/tty.SLAB_USBtoUART write_flash 0x000000 nodemcu-firmware/pre_build/latest/nodemcu_latest.bin
 ```
 
-**Nota:** Puede que tengas que cambiar la dirección del puerto serial ``/dev/tty.SLAB_USBtoUART`` en la línea de comandos anterior por otra dependiendo de tu sistema.
+**Note:** You may need to change the serial port path ``/dev/tty.SLAB_USBtoUART`` in the previous command line depending on your system.
