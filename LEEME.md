@@ -1,6 +1,6 @@
 # ESPino
 
-Los ESPino vienen con el firmware node-mcu precargado (Lua).
+Puedes programar el ESPino con el IDE de Arduino para ESP8266 o en LUA con el firmware node-mcu.
 
 ## Instalando el Driver USB
 
@@ -18,8 +18,16 @@ Los ESPino vienen con el firmware node-mcu precargado (Lua).
 	
 	Debe captarlo automáticamente y montarlo en ``/dev/ttyUSB0`` o similar.
 
+## Programando con Arduino IDE para ESP8266
+
+Puedes encontrar instrucciones de instalación y documentación aquí: https://github.com/esp8266/Arduino
+
+Videotutorial paso a paso de instalación y uso con ESPino: https://youtu.be/HYZPlrH3jCE
+
 ## Utilizando el IDE ESPlorer
 
+- Carga el firmware node-mcu en el ESPino, las instrucciones se encuentran más adelante en este documento
+- Asegúrate de tener instalado el entorno Java en tu PC (https://www.java.com/es/download/)
 - Ejecútalo con doble click a ESPlorer.jar, o en Windows, ESPlorer.bat
 - Selecciona el puerto serial correspondiente, 9600 bauds y da click en open
 - Puede que te de un error de que no se recibió la respuesta esperada, esto es normal
@@ -33,7 +41,32 @@ Puedes encontrar el Datasheet, esquemático y demás documentación del ESPino e
 
 ## Cargando el firmware node-mcu
 
-En caso de que hayas sobreescrito el firmware y quieras reinstalar node-mcu, haz lo siguiente:
+Para poder programar el ESPino en LUA, es necesario cargarle el firmware node-mcu, para ello haz lo siguiente:
+
+### Windows
+
+1. Conecta el ESPino a la PC por medio de un cable micro-USB, asegúrate de antes haber instalado el driver correspondiente
+2. Ejecuta el programa "ESP8266Flasher.exe"
+3. Selecciona el puerto COM correspondiente al ESPino
+  
+  ![Screenshot 1](https://github.com/esp8266/Arduino/raw/master/Docs/espflasher1.png)
+
+4. En la pestaña "Config", presiona el ícono de engrane del primer elemento y selecciona el archivo de firmware que se desee. En la carpeta "nodemcu-firmware" se encuentran dos versiones de éste, con y sin soporte de punto flotante.
+  
+  ![Screenshot 2](https://github.com/esp8266/Arduino/raw/master/Docs/espflasher2.png)
+
+5. Pon el ESPino en modo Bootloader:
+  
+  I. Presiona los botones RESET y USER/PROG al mismo tiempo sin soltarlos
+  
+  II. Suelta el botón RESET, manteniendo USER/PROG presionado
+  
+  III. Espera un segundo y suelta USER/PROG
+
+6. Haz click en "Flash" para subir el firmware
+7. Al terminar, presiona el botón RESET
+  
+### OSX y Linux
 
 Abre una terminal y ve a la carpeta donde está este archivo:
 
