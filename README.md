@@ -49,11 +49,11 @@ For programming the ESPino in lua, you need to upload the node-mcu firmware, for
 2. Launch "ESP8266Flasher.exe"
 3. Select the COM port corresponding to ESPino
 
-  ![Screenshot 1](https://github.com/esp8266/Arduino/raw/master/Docs/espflasher1.png)
+  ![Screenshot 1](https://raw.githubusercontent.com/makerlabmx/ESPino-tools/master/Docs/espflasher1.png)
 
 4. In the "Config" tab, press the gear icon in the first element and select the firmware file. In the "nodemcu-firmware" folder you can find two versions, with or without floating point support.
 
-  ![Screenshot 2](https://github.com/esp8266/Arduino/raw/master/Docs/espflasher2.png)
+  ![Screenshot 2](https://raw.githubusercontent.com/makerlabmx/ESPino-tools/master/Docs/espflasher2.png)
 
 5. Put the ESPino in Bootloader mode:
 

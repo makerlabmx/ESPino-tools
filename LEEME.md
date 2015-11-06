@@ -49,11 +49,11 @@ Para poder programar el ESPino en LUA, es necesario cargarle el firmware node-mc
 2. Ejecuta el programa "ESP8266Flasher.exe"
 3. Selecciona el puerto COM correspondiente al ESPino
   
-  ![Screenshot 1](https://github.com/esp8266/Arduino/raw/master/Docs/espflasher1.png)
+  ![Screenshot 1](https://raw.githubusercontent.com/makerlabmx/ESPino-tools/master/Docs/espflasher1.png)
 
 4. En la pestaña "Config", presiona el ícono de engrane del primer elemento y selecciona el archivo de firmware que se desee. En la carpeta "nodemcu-firmware" se encuentran dos versiones de éste, con y sin soporte de punto flotante.
   
-  ![Screenshot 2](https://github.com/esp8266/Arduino/raw/master/Docs/espflasher2.png)
+  ![Screenshot 2](https://raw.githubusercontent.com/makerlabmx/ESPino-tools/master/Docs/espflasher2.png)
 
 5. Pon el ESPino en modo Bootloader:
   
